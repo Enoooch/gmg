@@ -9,6 +9,10 @@ $ git clone https://github.com/Enoooch/gmg.git
 ```
 
 ```
+$ npm install
+```
+
+```
 $ npm link
 ```
 
