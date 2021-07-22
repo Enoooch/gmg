@@ -51,8 +51,13 @@ tags: ${JSON.stringify(TAGS)}
 ---
 `;
 
+/**
+ * @description gatsby markdown file path
+ */
+const BLOG_PATH = "content/blog/"
+
 const createFile = (answers) => {
-  const folderPath = `${process.cwd()}/${answers.TITLE}`;
+  const folderPath = `${process.cwd()}/${BLOG_PATH}${answers.TITLE}`;
   const filePath = `${folderPath}/index.md`;
   const { stderr } = shell.mkdir(folderPath);
   // shell.touch(filePath);
