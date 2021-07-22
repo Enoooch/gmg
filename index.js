@@ -60,8 +60,7 @@ const createFile = (answers) => {
     error(stderr);
     return "";
   }
-  content = markdownTemplate(answers)
-  fs.writeFileSync(filePath, content);
+  fs.writeFileSync(filePath, markdownTemplate(answers));
   return filePath;
 };
 
