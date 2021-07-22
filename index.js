@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const inquirer = require("inquirer");
 const chalk = require("chalk");
 const figlet = require("figlet");
+const inquirer = require("inquirer");
 const shell = require("shelljs");
 const fs = require('fs');
 
@@ -13,7 +13,7 @@ const init = () => {
   console.log(
     chalk.bold.italic.rgb(127, 0, 255)(
       figlet.textSync("Gatsby Markdown Generator", {
-        // font: "Slant",
+        font: "Standard",
         horizontalLayout: "default",
         verticalLayout: "default"
       })
@@ -64,19 +64,19 @@ const createFile = (answers) => {
   return filePath;
 };
 
-const success = (filepath) => {
-  console.log(chalk.white.green.bold(`File created at ${filepath}`));
+const success = (successMsg) => {
+  console.log(chalk.green.bold(successMsg));
 };
 
 const error = (errorMsg) => {
-  console.log(chalk.white.red.bold(errorMsg));
+  console.log(chalk.red.bold(errorMsg));
 };
 
 const run = async () => {
   init();
   const answers = await askQuestions();
   const filePath = createFile(answers);
-  filePath && success(filePath);
+  filePath && success(`File created at ${filePath}`);
 };
 
 run();
