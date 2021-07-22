@@ -1,0 +1,25 @@
+{
+  "name": "gmg",
+  "version": "1.0.0",
+  "description": "Gatsby markdown generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "gatsby",
+    "markdown",
+    "generator"
+  ],
+  "author": "Enoch",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "figlet": "^1.5.0",
+    "inquirer": "^8.1.2",
+    "shelljs": "^0.8.4"
+  },
+  "bin": {
+    "gmg": "./index.js"
+  }
+}
