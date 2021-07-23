@@ -13,12 +13,18 @@ const askQuestions = () => {
       message: "What is the description of the artical?"
     },
     {
-      type: "checkbox",
       name: "TAGS",
+      type: "checkbox",
       message: "Choose artical tags:",
       choices: ["js", "css", "html", "nodejs"],
+    },
+    {
+      name: "NEED_FOLDER",
+      type: "confirm",
+      message: "Create a folder with index.md inside?",
     }
   ];
+
   return inquirer.prompt(questions);
 };
 

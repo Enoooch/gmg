@@ -23,6 +23,6 @@ $ gmg
 
 ## To Do List
 - [x] Default content path support
-- [ ] Ask whether to create a folder
+- [x] Ask whether to create a folder
 - [ ] Add config file
 - [ ] Add default template & saved template

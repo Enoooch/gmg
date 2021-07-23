@@ -1,13 +1,8 @@
 const chalk = require("chalk");
 const figlet = require("figlet");
-const shell = require("shelljs");
-const fs = require('fs');
 const log = require('./log');
-const markdownTemplate = require('./template');
 const askQuestions = require('./questions');
-
-// shell config
-shell.config.silent = true
+const createFile = require('./create');
 
 const init = () => {
   console.log(
@@ -20,24 +15,6 @@ const init = () => {
     )
   );
 }
-
-/**
- * @description gatsby markdown file path
- */
-const BLOG_PATH = "content/blog/"
-
-const createFile = (answers) => {
-  const folderPath = `${process.cwd()}/${BLOG_PATH}${answers.TITLE}`;
-  const filePath = `${folderPath}/index.md`;
-  const { stderr } = shell.mkdir(folderPath);
-  // shell.touch(filePath);
-  if (stderr) {
-    log.error(stderr);
-    return "";
-  }
-  fs.writeFileSync(filePath, markdownTemplate(answers));
-  return filePath;
-};
 
 const run = async () => {
   init();
